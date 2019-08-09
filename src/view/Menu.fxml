@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -8,19 +9,28 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MenuController">
    <top>
-      <AnchorPane prefHeight="50.0" prefWidth="987.0">
+      <AnchorPane prefHeight="75.0" prefWidth="987.0">
          <children>
-            <ImageView fitHeight="50.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="12.5" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="12.5">
+            <ImageView fx:id="imgInicio" fitHeight="50.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="12.5">
                <image>
                   <Image url="@../resources/logo.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
-            <Button fx:id="btnAtendimento" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" AnchorPane.bottomAnchor="12.5" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="12.5">
+            <Label fx:id="txtHora" alignment="CENTER" prefHeight="50.0" prefWidth="110.0" style="-fx-border-color: #;" text="--:--:--" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="12.5">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnAtendimento" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="12.5">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -28,8 +38,11 @@
                      </image>
                   </ImageView>
                </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <Button fx:id="btnFrequencia" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" AnchorPane.bottomAnchor="12.5" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="12.5">
+            <Button fx:id="btnFrequencia" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="12.5">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -37,12 +50,10 @@
                      </image>
                   </ImageView>
                </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
-            <Label fx:id="txtHora" alignment="CENTER" prefHeight="50.0" prefWidth="110.0" style="-fx-border-color: #;" text="--:--:--" AnchorPane.bottomAnchor="12.5" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="12.5">
-               <font>
-                  <Font name="System Bold" size="25.0" />
-               </font>
-            </Label>
          </children>
       </AnchorPane>
    </top>
@@ -50,46 +61,391 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <WebView layoutX="83.0" layoutY="55.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <ImageView fx:id="imgSeta" fitHeight="25.0" fitWidth="25.0" layoutX="36.0" layoutY="14.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="0.0">
+            <ImageView fx:id="imgSeta" fitHeight="24.0" fitWidth="24.0" layoutX="16.0" layoutY="479.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
                <image>
                   <Image url="@../resources/arrow.png" />
                </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </ImageView>
          </children>
       </AnchorPane>
    </center>
    <left>
-      <AnchorPane nodeOrientation="RIGHT_TO_LEFT" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Accordion layoutX="-1.0" layoutY="39.0" nodeOrientation="LEFT_TO_RIGHT" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <Accordion layoutX="-1.0" layoutY="8.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="539.0" prefWidth="200.0" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <panes>
-                <TitledPane animated="false" text="Assyst">
-                     <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic>
+                <TitledPane alignment="CENTER_RIGHT" animated="false" text="Assyst (Service Desk)">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="49.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label fx:id="txtAssystAdmin" prefHeight="20.0" prefWidth="179.0" text="Assyst - Administrador">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtAssystUser" prefHeight="20.0" prefWidth="257.0" text="Assyst - Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtAssystManual" prefHeight="20.0" prefWidth="257.0" text="Manual">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane alignment="CENTER_RIGHT" animated="false" text="eGESP">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox layoutX="207.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="307.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label fx:id="txtEgespProd" prefHeight="20.0" prefWidth="179.0" text="Abrir eGESP - Produção">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtEgespHom" prefHeight="20.0" prefWidth="257.0" text="Abrir eGESP - Homologação">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtEgespSiedos" prefHeight="20.0" prefWidth="257.0" text="Abrir Siedos">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtEgespTrello" prefHeight="20.0" prefWidth="257.0" text="Abrir Trello">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtEgespGp" prefHeight="20.0" prefWidth="257.0" text="Abrir GP">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                  </content>
+                </TitledPane>
+                <TitledPane alignment="CENTER_RIGHT" animated="false" text="ePROC">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="307.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label fx:id="txtEprocCadastro" prefHeight="20.0" prefWidth="179.0" text="Pré-cadastrar Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtEprocCriar" prefHeight="20.0" prefWidth="257.0" text="Criar Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtEprocEditar" prefHeight="20.0" prefWidth="257.0" text="Editar Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtEprocRemover" prefHeight="20.0" prefWidth="257.0" text="Remover Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtEprocCertidao" prefHeight="20.0" prefWidth="257.0" text="Emitir Certidão">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtEprocSproc" prefHeight="20.0" prefWidth="257.0" text="Consultar SPROC">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtEprocManual" prefHeight="20.0" prefWidth="257.0" text="Manual">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                  </content>
+                </TitledPane>
+                  <TitledPane alignment="CENTER_RIGHT" animated="false" text="Rede">
                      <content>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="307.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label fx:id="txtRedeBitvise" prefHeight="20.0" prefWidth="179.0" text="Abrir Bitvise">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtRedeCriar" prefHeight="20.0" prefWidth="257.0" text="Criar Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtRedeEditar" prefHeight="20.0" prefWidth="257.0" text="Editar Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtRedeRemover" prefHeight="20.0" prefWidth="257.0" text="Remover Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtRedeServidores" prefHeight="20.0" prefWidth="257.0" text="Listar Servidores">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtRedeManual" prefHeight="20.0" prefWidth="257.0" text="Manual">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
                      </content>
-                </TitledPane>
-                <TitledPane animated="false" text="untitled 2">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                     <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic>
-                </TitledPane>
-                <TitledPane animated="false" text="untitled 3">
-                  <content>
-                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                  </content>
-                     <graphic>
-                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true" />
-                     </graphic>
-                </TitledPane>
+                  </TitledPane>
+                  <TitledPane alignment="CENTER_RIGHT" animated="false" text="SIP">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="307.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label fx:id="txtSipSei" prefHeight="20.0" prefWidth="179.0" text="Abrir SEI">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtSipFrota" prefHeight="20.0" prefWidth="257.0" text="Abrir Frota">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtSipCriarUser" prefHeight="20.0" prefWidth="257.0" text="Criar Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtSipEditarUser" prefHeight="20.0" prefWidth="257.0" text="Editar Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtSipCriarUnidade" prefHeight="20.0" prefWidth="257.0" text="Criar Unidade">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtSipEditarUnidade" prefHeight="20.0" prefWidth="257.0" text="Editar Unidade">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtSipEditarPermissao" prefHeight="20.0" prefWidth="257.0" text="Editar Permissões">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtSipManual" prefHeight="20.0" prefWidth="257.0" text="Manual">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane alignment="CENTER_RIGHT" animated="false" text="Spark">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="307.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label fx:id="txtSparkAbrir" prefHeight="20.0" prefWidth="179.0" text="Abrir Spark">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtSparkCriar" prefHeight="20.0" prefWidth="257.0" text="Criar Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtSparkEditar" prefHeight="20.0" prefWidth="257.0" text="Editar Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtSparkRemover" prefHeight="20.0" prefWidth="257.0" text="Remover Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtSparkPesquisar" prefHeight="20.0" prefWidth="257.0" text="Pesquisar Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtSparkManual" prefHeight="20.0" prefWidth="257.0" text="Manual">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane alignment="CENTER_RIGHT" animated="false" text="Webmail">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="307.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label fx:id="txtWebmailAbrir" prefHeight="20.0" prefWidth="179.0" text="Abrir Webmail">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtWebmailCriar" prefHeight="20.0" prefWidth="257.0" text="Criar Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtWebmailEditar" prefHeight="20.0" prefWidth="257.0" text="Editar Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtWebmailBloquear" prefHeight="20.0" prefWidth="257.0" text="Bloquear Usuário">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtWebmailManual" prefHeight="20.0" prefWidth="257.0" text="Manual">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane alignment="CENTER_RIGHT" animated="false" text="TJ">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="307.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label fx:id="txtTjIdp" prefHeight="20.0" prefWidth="179.0" text="Abrir IDP Manager">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtTjTv12" prefHeight="20.0" prefWidth="257.0" text="Abrir Team Viewer">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtTjMalote" prefHeight="20.0" prefWidth="257.0" text="Abrir Malote Digital">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtTjSicap" prefHeight="20.0" prefWidth="257.0" text="Abrir SICAP">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtTjGise" prefHeight="20.0" prefWidth="257.0" text="Abrir GISE">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtTjDiario" prefHeight="20.0" prefWidth="257.0" text="Abrir Diário da Justiça">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                     </content>
+                  </TitledPane>
+                  <TitledPane alignment="CENTER_RIGHT" animated="false" text="Demais Opções">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <VBox nodeOrientation="LEFT_TO_RIGHT" prefHeight="200.0" prefWidth="307.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <children>
+                                    <Label fx:id="txtOutrosPortalTransp" prefHeight="20.0" prefWidth="179.0" text="Listar Servidores (Portal Transparência)">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtOutrosCertifiDig" prefHeight="20.0" prefWidth="257.0" text="Agendar Certificado Digital">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtOutrosGar" prefHeight="20.0" prefWidth="257.0" text="Abrir GAR Corporativo">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtOutrosPlanilha" prefHeight="20.0" prefWidth="257.0" text="Abrir Sistemas DSI (Planilha)">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtOutrosContracheque" prefHeight="20.0" prefWidth="257.0" text="Abrir DSS Cuiabá (Contracheque)">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                    <Label fx:id="txtOutrosAgenda" prefHeight="20.0" prefWidth="257.0" text="Agenda Telefônica">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children></AnchorPane>
+                     </content>
+                  </TitledPane>
               </panes>
             </Accordion>
-         </children>
-      </AnchorPane>
+            <ImageView fx:id="imgConfiguracao" fitHeight="50.0" fitWidth="50.0" layoutX="6.0" layoutY="469.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0">
+               <image>
+                  <Image url="@../resources/configuration.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children></AnchorPane>
    </left>
 </BorderPane>
